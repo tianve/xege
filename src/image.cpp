@@ -2,7 +2,7 @@
 * EGE (Easy Graphics Engine)
 * filename  image.cpp
 
-±¾ÎÄ¼þ¼¯ÖÐËùÓÐ¶Ôimage»ù±¾²Ù×÷µÄ½Ó¿ÚºÍÀà¶¨Òå
+æœ¬æ–‡ä»¶é›†ä¸­æ‰€æœ‰å¯¹imageåŸºæœ¬æ“ä½œçš„æŽ¥å£å’Œç±»å®šä¹‰
 */
 
 #ifndef _CRT_SECURE_NO_WARNINGS
@@ -1565,7 +1565,7 @@ IMAGE::putimage_rotatezoom(
 	s = (crb | cg) >> 8;\
 }
 
-/* ege 3d ½á¹¹ */
+/* ege 3d ç»“æž„ */
 struct point2d {
 	float x;
 	float y;

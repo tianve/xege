@@ -1,4 +1,4 @@
-@rem 在以下一行设置你的mingw路径，建议使用code::blocks自带的mingw版本来编译，路径可以带空格或者中文，需要使用gbk编码
+@rem 鍦ㄤ互涓嬩竴琛岃缃綘鐨刴ingw璺緞锛屽缓璁娇鐢╟ode::blocks鑷甫鐨刴ingw鐗堟湰鏉ョ紪璇戯紝璺緞鍙互甯︾┖鏍兼垨鑰呬腑鏂囷紝闇�瑕佷娇鐢╣bk缂栫爜
 set MINGWPATH=D:\mingw4.7.1
 
 set path=%MINGWPATH%\bin;%MINGWPATH%\mingw32\bin
@@ -7,9 +7,9 @@ mingw32-make.exe -f MakefileWin clean
 mingw32-make.exe -f MakefileWin all
 
 if not %ErrorLevel% == 0 (
-    rem 编译失败
+    rem 缂栬瘧澶辫触
 ) else (
-    rem 编译完成，请在本目录下找libgraphics.a文件
+    rem 缂栬瘧瀹屾垚锛岃鍦ㄦ湰鐩綍涓嬫壘libgraphics.a鏂囦欢
 )
 
 pause

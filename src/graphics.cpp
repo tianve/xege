@@ -8,14 +8,14 @@
 * Blog:         http://misakamm.com
 * E-Mail:       mailto:misakamm[at gmail com]
 
-±àÒëËµÃ÷£º±àÒëÎª¶¯Ì¬¿âÊ±£¬ĞèÒª¶¨Òå PNG_BULIDDLL£¬ÒÔµ¼³ödllº¯Êı
+ç¼–è¯‘è¯´æ˜ï¼šç¼–è¯‘ä¸ºåŠ¨æ€åº“æ—¶ï¼Œéœ€è¦å®šä¹‰ PNG_BULIDDLLï¼Œä»¥å¯¼å‡ºdllå‡½æ•°
 
-±¾Í¼ĞÎ¿â´´½¨Ê±¼ä2010 0916
+æœ¬å›¾å½¢åº“åˆ›å»ºæ—¶é—´2010 0916
 
-±¾ÎÄ¼ş¶¨ÒåÆ½Ì¨ÃÜÇĞÏà¹ØµÄ²Ù×÷¼°½Ó¿Ú
+æœ¬æ–‡ä»¶å®šä¹‰å¹³å°å¯†åˆ‡ç›¸å…³çš„æ“ä½œåŠæ¥å£
 */
 
-//±àÒëÆ÷°æ±¾£¬Ä¿Ç°½öÖ§³Övc6/vc2008/vc2010/vc2012/mingw
+//ç¼–è¯‘å™¨ç‰ˆæœ¬ï¼Œç›®å‰ä»…æ”¯æŒvc6/vc2008/vc2010/vc2012/mingw
 #ifdef _WIN64
 #	define SYSBITS TEXT("x64")
 #else
@@ -131,11 +131,11 @@ ui_msg_process(EGEMSG& qmsg) {
 	qmsg.flag |= 1;
 	if (qmsg.message >= WM_KEYFIRST && qmsg.message <= WM_KEYLAST) {
 		if (qmsg.message == WM_KEYDOWN) {
-			pg->egectrl_root->keymsgdown((unsigned)qmsg.wParam, 0); // ÒÔºó²¹¼Óflag
+			pg->egectrl_root->keymsgdown((unsigned)qmsg.wParam, 0); // ä»¥åè¡¥åŠ flag
 		} else if (qmsg.message == WM_KEYUP) {
-			pg->egectrl_root->keymsgup((unsigned)qmsg.wParam, 0); // ÒÔºó²¹¼Óflag
+			pg->egectrl_root->keymsgup((unsigned)qmsg.wParam, 0); // ä»¥åè¡¥åŠ flag
 		} else if (qmsg.message == WM_CHAR) {
-			pg->egectrl_root->keymsgchar((unsigned)qmsg.wParam, 0); // ÒÔºó²¹¼Óflag
+			pg->egectrl_root->keymsgchar((unsigned)qmsg.wParam, 0); // ä»¥åè¡¥åŠ flag
 		}
 	} else if (qmsg.message >= WM_MOUSEFIRST && qmsg.message <= WM_MOUSELAST) {
 		int x = (short int)((UINT)qmsg.lParam & 0xFFFF), y = (short int)((UINT)qmsg.lParam >> 16);
@@ -702,7 +702,7 @@ init_instance(HINSTANCE hInstance, int nCmdShow) {
 		lf.lfClipPrecision  = CLIP_DEFAULT_PRECIS;
 		lf.lfQuality        = DEFAULT_QUALITY;
 		lf.lfPitchAndFamily = DEFAULT_PITCH;
-		lstrcpyW(lf.lfFaceName, L"ËÎÌå");
+		lstrcpyW(lf.lfFaceName, L"å®‹ä½“");
 		HFONT hfont = CreateFontIndirectW(&lf);
 		::SendMessage(pg->hwnd, WM_SETFONT, (WPARAM)hfont, NULL);
 		//DeleteObject(hfont);
@@ -1279,7 +1279,7 @@ initgraph(int *gdriver, int *gmode, char *path) {
 
 	UpdateWindow(pg->hwnd);
 
-	{   //³õÊ¼»¯Êó±êÎ»ÖÃÊı¾İ
+	{   //åˆå§‹åŒ–é¼ æ ‡ä½ç½®æ•°æ®
 		pg->mouse_last_x = pg->dc_w / 2;
 		pg->mouse_last_y = pg->dc_h / 2;
 	}
@@ -1329,12 +1329,12 @@ messageloopthread(LPVOID lpParameter) {
 		int nCmdShow = SW_SHOW;
 		register_class(pg, pg->instance);
 
-		/* Ö´ĞĞÓ¦ÓÃ³ÌĞò³õÊ¼»¯: */
+		/* æ‰§è¡Œåº”ç”¨ç¨‹åºåˆå§‹åŒ–: */
 		if (!init_instance(pg->instance, nCmdShow)) {
 			return 0xFFFFFFFF;
 		}
 
-		//Í¼ĞÎ³õÊ¼»¯
+		//å›¾å½¢åˆå§‹åŒ–
 		graph_init(pg);
 
 		{

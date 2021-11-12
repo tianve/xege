@@ -5,15 +5,15 @@
 #include<stdlib.h>
 int main()
 {
-    double a , b , c , d , r; //¶¨Òå±äÁ¿ 
+    double a , b , c , d , r; //å®šä¹‰å˜é‡ 
 
-    printf("Please input four float number:\n"); //ÇëÊäÈëËÄ¸öÊý 
-    scanf("%lf %lf %lf %lf", &a,&b,&c,&d); //ÊäÈë 
+    printf("Please input four float number:\n"); //è¯·è¾“å…¥å››ä¸ªæ•° 
+    scanf("%lf %lf %lf %lf", &a,&b,&c,&d); //è¾“å…¥ 
     //sscanf(NULL, NULL);
 
-    r = ( (a + b ) * (a - b) + c ) / d ; //¼ÆËã¹ý³Ì 
+    r = ( (a + b ) * (a - b) + c ) / d ; //è®¡ç®—è¿‡ç¨‹ 
 
-    printf("The result is %lf",r); //Êä³ö½á¹û 
+    printf("The result is %lf",r); //è¾“å‡ºç»“æžœ 
     system("pause");
     return 0;
 
@@ -45,9 +45,9 @@ public:
     } CTL_PREINITEND;
     graph(CTL_DEFPARAM) : CTL_INITBASE(egeControlBase) {
         CTL_INIT;
-        // ³õÊ¼»¯×ø±ê£¬
+        // åˆå§‹åŒ–åæ ‡ï¼Œ
         x = random(parent()->getw()), y = random(parent()->geth());
-        // ¿ªÆôÍ¸Ã÷°ëÍ¸Ã÷»ìºÏ
+        // å¼€å¯é€æ˜ŽåŠé€æ˜Žæ··åˆ
         blendmode(1);
 
         {
@@ -124,7 +124,7 @@ private:
     color_t m_col;
 };
 
-// ×î¼òµ¥µÄ¼Ì³ÐÊ¾Àý
+// æœ€ç®€å•çš„ç»§æ‰¿ç¤ºä¾‹
 class Window2 : public Window
 {
 public:
@@ -420,7 +420,7 @@ void cap_pt(struct net* pnet, int px, int py, int op) {
 
 void init() {
     int g = TRUECOLORSIZE, m = (g_height<<16) | g_width;
-    //initgraph(&g, &m, "±Ì²¨µ´Ñú");
+    //initgraph(&g, &m, "ç¢§æ³¢è¡æ¼¾");
     //setinitmode(3);
     initgraph(640, 480);
     g_width  = getwidth();
@@ -441,7 +441,7 @@ int main(int argc, char* argv[]) {
     init();
     init_net(&g_net, basepoint * 4, basepoint * 3, g_width, g_height);
     setbkmode(TRANSPARENT);
-    setfont(12, 0, "ËÎÌå");
+    setfont(12, 0, "å®‹ä½“");
 
     WindowLock();
     for (; kbhit() == 0; delay_fps(60)) {
@@ -462,7 +462,7 @@ int main(int argc, char* argv[]) {
         draw_net(&g_net);
 
         setcolor(0xFFFFFF);
-        sprintf(str, "Ö¡ÂÊ %.2f fps", GetFPS());
+        sprintf(str, "å¸§çŽ‡ %.2f fps", GetFPS());
         outtextxy(0,0,str);
     }
     closegraph();
